@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+:root {
+  --gp-bg: #f8fafc;
+  --gp-fg: #0f172a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--gp-bg);
+  color: var(--gp-fg);
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans SC",
+    "Noto Sans SC", sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background: rgba(0, 54, 137, 0.18);
+  color: #0f172a;
+}
+
+.decision-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  width: 100%;
+}
+
+.metric-card {
+  min-width: 0;
+  width: auto;
+  padding: 12px 14px;
+  border: 1px solid #d9dee8;
+  border-radius: 12px;
+  background: #f8fafc;
+  box-sizing: border-box;
+}
+
+.wallet-login-surface {
+  background:
+    radial-gradient(circle at 12% 14%, rgba(96, 165, 250, 0.15) 0%, rgba(96, 165, 250, 0.1) 16%, rgba(96, 165, 250, 0.05) 30%, rgba(96, 165, 250, 0) 52%),
+    radial-gradient(circle at 88% 10%, rgba(14, 165, 233, 0.12) 0%, rgba(14, 165, 233, 0.08) 18%, rgba(14, 165, 233, 0.04) 32%, rgba(14, 165, 233, 0) 56%),
+    linear-gradient(135deg, rgba(247, 251, 255, 0.98) 0%, rgba(243, 248, 255, 0.96) 42%, rgba(255, 255, 255, 0.97) 100%);
+}
+
+@keyframes login-panel-rise {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0) scale(0.985);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+.login-panel-reveal {
+  opacity: 0;
+  animation: login-panel-rise 760ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .login-panel-reveal {
+    opacity: 1;
+    animation: none;
+  }
+}

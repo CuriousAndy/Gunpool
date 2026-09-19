@@ -1,0 +1,37 @@
+{
+  "name": "gunpool-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "check:text": "node scripts/check-mojibake.mjs",
+    "build": "npm run check:text && next build",
+    "start": "next start",
+    "lint": "eslint",
+    "sync:market": "node scripts/trigger-market-sync.mjs"
+  },
+  "dependencies": {
+    "@radix-ui/react-dialog": "^1.1.15",
+    "@tanstack/react-query": "^5.90.20",
+    "better-sqlite3": "^12.6.2",
+    "echarts": "^6.0.0",
+    "echarts-for-react": "^3.0.6",
+    "next": "16.1.6",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "sonner": "^2.0.7",
+    "viem": "^2.45.1",
+    "wagmi": "^3.4.2"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.1.6",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}

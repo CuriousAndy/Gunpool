@@ -1,0 +1,36 @@
+{
+  "name": "hardhat-project",
+  "version": "1.0.0",
+  "description": "GunPool: StrategyVault + mock lending pools on Hardhat, with a Next.js dashboard for on-chain and market APY data",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix gunpool-frontend run dev",
+    "chain": "node scripts/start-persistent-chain.mjs",
+    "chain:hardhat": "hardhat node",
+    "deploy:local": "hardhat run --network localhost scripts/04_deploy_5_pools_and_vault.ts",
+    "deploy:local:once": "node scripts/deploy-local-once.mjs",
+    "admin:step": "hardhat run --network localhost scripts/05_admin_set_apys_and_rebalance.ts",
+    "faucet": "hardhat run --network localhost scripts/06_faucet_musdc.ts",
+    "bootstrap:local": "node scripts/fullstack_local.mjs --once --no-frontend",
+    "dev:local": "node scripts/fullstack_local.mjs",
+    "frontend:dev": "npm --prefix gunpool-frontend run dev",
+    "frontend:build": "npm --prefix gunpool-frontend run build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "type": "module",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-ethers": "^4.0.3",
+    "@nomicfoundation/hardhat-viem": "^3.0.1",
+    "@types/node": "^22.19.3",
+    "ethers": "^6.16.0",
+    "ganache": "^7.9.2",
+    "hardhat": "^3.1.0",
+    "typescript": "~5.8.0",
+    "viem": "^2.43.3"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.4.0"
+  }
+}
